@@ -45,6 +45,7 @@ with gr.Blocks() as demo:
                min_text,
                next_close_text
                ]
-    predict_button.click(lambda: predict(data), outputs=outputs)
+    # predict_button.click(lambda: predict(data), outputs=outputs)
+    predict_button.click(lambda: predict_mock(data), outputs=outputs)
 
 demo.launch(debug=True)

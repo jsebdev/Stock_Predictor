@@ -1,17 +1,10 @@
 import numpy as np
-# import matplotlib.pyplot as plt
 import pandas as pd
 import pandas_datareader as web
 import datetime as dt
 import yfinance as yfin
-# import tensorflow as tf
 import os
-# import re
 
-from huggingface_hub import from_pretrained_keras
-# from sklearn.preprocessing import MinMaxScaler
-# from tensorflow.keras.models import Sequential
-# from tensorflow.keras.layers import Dense, Dropout, LSTM
 
 
 def get_data(ticker='AAPL', start=None, end=None):
@@ -95,3 +88,6 @@ def predict(data):
     jump = next_candle[0]
     next_candle = next_candle + last_close
     return (jump, next_candle[0], next_candle[1], next_candle[2], next_candle[3])
+
+def predict_mock(data):
+    return (0,1,2,3,4)
