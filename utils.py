@@ -5,6 +5,7 @@ import datetime as dt
 import yfinance as yfin
 import os
 
+from huggingface_hub import from_pretrained_keras
 
 
 def get_data(ticker='AAPL', start=None, end=None):
@@ -75,7 +76,7 @@ def preprocessing(data):
 
 
 # Model prediction
-# model = from_pretrained_keras("jsebdev/apple_stock_predictor")
+model = from_pretrained_keras("jsebdev/apple_stock_predictor")
 def predict(data):
     input, decoder = preprocessing(data)
     print("input")
